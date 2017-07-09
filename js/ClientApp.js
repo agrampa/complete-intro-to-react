@@ -4,11 +4,20 @@ import { render } from 'react-dom';
 const ce = React.createElement
 
 const MyTitle = function(props) {
+  // return (
+  //   ce('div', null,
+  //     ce('h1', { style: { color: props.color } }, props.title)
+  //   )
+  // )
+  const style = { color: props.color };
+
   return (
-    ce('div', null,
-      ce('h1', { style: { color: props.color } }, props.title)
-    )
+    <div>
+      <h1 style={ style }>{ props.title }</h1>
+    <div>
   )
+
+  // can also write <h1 style={ { color: props.color } }> instead
 }
 
 const MyFirstComponent = function() {
