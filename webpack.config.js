@@ -14,7 +14,7 @@ const config = {
   devServer: {
     hot: true,
     publicPath: '/public/',
-    historyApiFallback: true
+    historyApiFallback: true // required for BrowserRouter to work, otherwise 404
   },
   devServer: {
     publicPath: '/public/'
