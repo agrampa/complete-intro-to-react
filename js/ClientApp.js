@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Landing from './Landing.js';
 import Search from './Search.js';
 
+// Commenting out html/jsx in js files: anything in between {/* */} will be an inline comment
+
 const FourOhFour = () => <h1>404</h1>
 
 const App = () => ( // use paren with arrow functions when the first line is a return
