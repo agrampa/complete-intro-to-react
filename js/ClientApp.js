@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { HashRouter, Route } from 'react-router-dom';
 import Landing from './Landing.js';
+import Search from './Search.js';
 
 const App = () => ( // use paren with arrow functions when the first line is a return
     // need to use "className" bc "class" is a reserved word
@@ -9,6 +10,7 @@ const App = () => ( // use paren with arrow functions when the first line is a r
     <div className="app">
       // will render Landing if the exact path is matched, otherwise render nothing
       <Route exact path="/" component={Landing} />
+      <Route path="/search" component={Search} />
     </div>
   </HashRouter>
 );
