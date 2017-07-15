@@ -1,15 +1,23 @@
 {
   "extends": [
+<<<<<<< HEAD
+=======
     "plugin:flowtype/recommended",
+>>>>>>> 03296d511993ad5399c09b032d2088583ab13102
     "airbnb",
     "prettier",
     "prettier/react"
   ],
   "plugins": [
+<<<<<<< HEAD
+    "prettier"
+  ],
+=======
     "flowtype",
     "prettier"
   ],
   "parser": "babel-eslint",
+>>>>>>> 03296d511993ad5399c09b032d2088583ab13102
   "parserOptions": {
     "ecmaVersion": 2016,
     "sourceType": "module",
@@ -19,11 +27,16 @@
   },
   "env": {
     "es6": true,
+<<<<<<< HEAD
+    "browser": true,
+    "node": true
+=======
     "jest": true,
     "browser": true,
     "node": true
   },
   "globals": {
     "DEBUG": false
+>>>>>>> 03296d511993ad5399c09b032d2088583ab13102
   }
 }
