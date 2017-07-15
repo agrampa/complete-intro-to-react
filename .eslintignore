@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 public/
 node_modules/
 ClientApp.js
-=======
-node_modules/
-public/
->>>>>>> 03296d511993ad5399c09b032d2088583ab13102
+Landing.js

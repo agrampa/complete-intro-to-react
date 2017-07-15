@@ -1,15 +1,12 @@
 {
   "scripts": {
-<<<<<<< HEAD
-    "api": "node ratingsAPI.js"
-=======
     "api": "node ratingsAPI.js",
     "format": "prettier --list-different --single-quote --print-width=120 webpack.config.js \"js/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "watch": "webpack --watch",
     "build": "webpack -p",
     "build:dev": "webpack -d",
-    "dev": "NODE_ENV=development nodemon server.js",
+    "dev": "webpack-dev-server",
     "start": "NODE_ENV=server node server.js",
     "test": "NODE_ENV=test jest",
     "test:update": "NODE_ENV=test jest -u"
@@ -18,7 +15,6 @@
     "snapshotSerializers": [
       "jest-serializer-enzyme"
     ]
->>>>>>> 03296d511993ad5399c09b032d2088583ab13102
   },
   "dependencies": {
     "axios": "0.16.1",
@@ -40,11 +36,7 @@
     "redux": "3.6.0",
     "redux-thunk": "2.2.0",
     "styled-components": "2.0.0",
-<<<<<<< HEAD
     "webpack": "^2.6.1",
-=======
-    "webpack": "2.6.1",
->>>>>>> 03296d511993ad5399c09b032d2088583ab13102
     "webpack-dev-middleware": "1.10.2",
     "webpack-hot-middleware": "2.18.0"
   },
@@ -68,11 +60,7 @@
     "eslint-plugin-flowtype": "2.33.0",
     "eslint-plugin-import": "2.3.0",
     "eslint-plugin-jsx-a11y": "5.0.3",
-<<<<<<< HEAD
     "eslint-plugin-prettier": "^2.1.2",
-=======
-    "eslint-plugin-prettier": "2.1.1",
->>>>>>> 03296d511993ad5399c09b032d2088583ab13102
     "eslint-plugin-react": "7.0.1",
     "flow-bin": "0.47.0",
     "jest": "20.0.4",
