@@ -1,4 +1,5 @@
 import React from 'react';
+import { shape, string } from 'prop-types';
 
 const ShowCard = props => (
   <div className="show-card">
@@ -10,6 +11,23 @@ const ShowCard = props => (
     </div>
   </div>
 );
+
+
+// propTypes are not required but makes linter stop complaining
+// shape is an object, contain the object of expected data
+// without ".isRequired" that item isn't needed, will default to being optional otherwise
+
+// optional props need to be given a default
+// ShowCard.defaultProps = {}...
+
+ShowCard.propTypes = {
+  show: shape({
+    poster: string.isRequired,
+    title: string.isRequired,
+    year: string.isRequired,
+    description: string.isRequired,
+  }).isRequired;
+};
 
 export default ShowCard;
 
