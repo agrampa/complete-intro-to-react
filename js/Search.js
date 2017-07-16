@@ -18,3 +18,15 @@ export default Search;
 
 
 // use alt+command+period to add closing tag!
+
+
+
+// add object spread operator:
+// Note: array spread is already in place, object spread is forthcoming
+const Search = () => (
+  <div className="search">
+    {preload.shows.map(show => <ShowCard {...show} />)}
+  </div>
+);
+
+// now, in showCard....

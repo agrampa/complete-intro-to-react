@@ -1,6 +1,7 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
 
+// without spread operator
 const ShowCard = props => (
   <div className="show-card">
     <img alt={`${props.show.title} Show Poster`} src={`/public/img/posters/${props.show.poster}`} />
@@ -8,6 +9,18 @@ const ShowCard = props => (
       <h3>{props.show.title}</h3>
       <h4>({props.show.year})</h4>
       <p>{props.show.description}</p>
+    </div>
+  </div>
+);
+
+// with spread operator
+const ShowCard = props => (
+  <div className="show-card">
+    <img alt={`${props.title} Show Poster`} src={`/public/img/posters/${props.poster}`} />
+    <div>
+      <h3>{props.title}</h3>
+      <h4>({props.year})</h4>
+      <p>{props.description}</p>
     </div>
   </div>
 );
@@ -20,6 +33,7 @@ const ShowCard = props => (
 // optional props need to be given a default
 // ShowCard.defaultProps = {}...
 
+// without spread operator
 ShowCard.propTypes = {
   show: shape({
     poster: string.isRequired,
@@ -27,6 +41,14 @@ ShowCard.propTypes = {
     year: string.isRequired,
     description: string.isRequired,
   }).isRequired;
+};
+
+// with spread operator added
+ShowCard.propTypes = {
+  poster: string.isRequired,
+  title: string.isRequired,
+  year: string.isRequired,
+  description: string.isRequired,
 };
 
 export default ShowCard;
