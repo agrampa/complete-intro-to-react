@@ -29,6 +29,7 @@ const ShowCard = props => (
 );
 
 // with spread operator
+// props is immutable
 const ShowCard = props => (
   <Wrapper> // add styling, can keep the className as well
     <img alt={`${props.title} Show Poster`} src={`/public/img/posters/${props.poster}`} />
