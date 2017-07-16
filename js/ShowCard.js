@@ -1,6 +1,18 @@
 import React from 'react';
 import { shape, string } from 'prop-types'; // shape is needed without spread operator
 import { string } from 'prop-types'; // not needed with spread operator
+import styled from 'styled-components';
+
+
+const color = '#333';
+// backtick syntax: "tagged template literal", valid JS, can write CSS within it, just like you normally would
+// creates style tag somewhere on the page, outputs the styling into the style tag, then gives the div a class that matches is so the styling is applied
+const Wrapper = styled.div`
+  width: 32%;
+  border: 2px solid ${color};
+  border-radius: 4px;
+  overflow: hidden;
+`;
 
 // without spread operator
 const ShowCard = props => (
@@ -16,14 +28,14 @@ const ShowCard = props => (
 
 // with spread operator
 const ShowCard = props => (
-  <div className="show-card">
+  <Wrapper> // add styling
     <img alt={`${props.title} Show Poster`} src={`/public/img/posters/${props.poster}`} />
     <div>
       <h3>{props.title}</h3>
       <h4>({props.year})</h4>
       <p>{props.description}</p>
     </div>
-  </div>
+  </Wrapper> // add styling
 );
 
 
