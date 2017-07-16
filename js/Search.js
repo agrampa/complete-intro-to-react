@@ -25,7 +25,11 @@ export default Search;
 // Note: array spread is already in place, object spread is forthcoming
 const Search = () => (
   <div className="search">
-    {preload.shows.map(show => <ShowCard {...show} />)}
+  // key prop: if there were a sort method, react compares the array to the last one that was there before, and because they aren't the same, will attempt to re-render everything
+  // prefer to just reorganize the DOM nodes, especially when this becomes larger and more robust
+  // pass in something to use as they key for react to use are reference when comparing, something that is unique to each object, like an id or an email
+  // do not pass in index in the .map function because it will throw off the sorting when something changes and it will re-render anyway
+    {preload.shows.map(show => <ShowCard key={show.imdbID} {...show} />)}
   </div>
 );
 
