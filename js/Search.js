@@ -48,14 +48,37 @@ const Search = () => (
 
 
 // The above are stateless, functional components, so change it to have its own state, called an ES6 Class component
-
+// *** MUST HAVE RENDER METHOD, WHICH MUST RETURN MARKUP *** //
 class Search extends Component {
+  constructor (props) {
+    super(props)
+  // initalize state for search
+    this.state = {
+      searchTerm: 'This is a debug statement' // will eventually be an empty string once working
+    };
+
+    this.handleSearchTermChange = this.handleSearchTermChange.bind(this); // <- this is the good way, it happens once in the constructor and will not need to be called again
+    // if done the way below, it will create and call the function every time the input changes
+    // functions are cheap but not free, performance wise!
+  }
+
+  // with onChange in input below, will be called when the search field is modified and fill in the input field so that the input from the user will be reflected on the page
+  // without this function, the input field will always say 'This is a debug statement' any time a character is entered into the input field
+  handleSearchTermChange (event) {
+    this.setState({searchTerm: event.target.value});
+  }
+
   render() {
     return (
       <div className="search">
         <header>
           <h1>svideo</h1>
-          <input type="text" placeholder="Search" />
+          <input
+            onChange={this.handleSearchTermChange}
+            // onChange={this.handleSearchTermChange.bind(this)} <- NO! this is the bad way
+            value={this.state.searchTerm}
+            type="text"
+            placeholder="Search" />
           </header>
           <div>
           {preload.shows.map(show => <ShowCard key={show.imdbID} {...show} />)}
