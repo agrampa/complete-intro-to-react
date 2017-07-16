@@ -1,5 +1,6 @@
 import React from 'react';
-import { shape, string } from 'prop-types';
+import { shape, string } from 'prop-types'; // shape is needed without spread operator
+import { string } from 'prop-types'; // not needed with spread operator
 
 // without spread operator
 const ShowCard = props => (
@@ -44,6 +45,7 @@ ShowCard.propTypes = {
 };
 
 // with spread operator added
+// now they are all top level items
 ShowCard.propTypes = {
   poster: string.isRequired,
   title: string.isRequired,

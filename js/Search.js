@@ -29,4 +29,7 @@ const Search = () => (
   </div>
 );
 
-// now, in showCard....
+// now, in showCard....  make changes and they all become top-level items
+// use this when you know everything that is in the item
+// run into problems when you are passing along data that you don't need to
+// for example, the show object has an imdb id which isn't being used, so the spread might not really be a good idea here, would be better if all of the properties are actually being used
