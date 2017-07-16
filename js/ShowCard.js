@@ -14,6 +14,8 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
+// parent can pass data down to the child, but child has no concept of who the parents are => one-way data flow
+
 // without spread operator
 const ShowCard = props => (
   <div className="show-card">
@@ -28,7 +30,7 @@ const ShowCard = props => (
 
 // with spread operator
 const ShowCard = props => (
-  <Wrapper> // add styling
+  <Wrapper> // add styling, can keep the className as well
     <img alt={`${props.title} Show Poster`} src={`/public/img/posters/${props.poster}`} />
     <div>
       <h3>{props.title}</h3>
