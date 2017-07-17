@@ -37,10 +37,18 @@ test('Search renders correctly', () => {
 
 test('Search should render correct amount of shows', () => {
   const component = shallow(<Search />);
+  // use .find for react components
   expect(component.find(ShowCard).length).toEqual(preload.shows.length);
 });
 
 
 test('Search should render correct amount of shows based on search term', () => {
-
-})
+  const searchWord = 'black';
+  const component = shallow(<Search />);
+  // use .find for css selectors
+  component.find('input').simulate('change', {target: {value: searchWord}}); // simulates user typing 'black'
+  const showCount = preload.shows.filter(show => `${show.title} ${show.description}`.toUpperCase()
+      .toIndexOf(searchWord.toUpperCase())
+  );
+  expect(component.find(ShowCard).length).toEqual(showCount);
+});
