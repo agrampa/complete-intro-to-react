@@ -45,10 +45,11 @@ test('Search should render correct amount of shows', () => {
 test('Search should render correct amount of shows based on search term', () => {
   const searchWord = 'black';
   const component = shallow(<Search />);
-  // use .find for css selectors
+  // use .find for css selectors (or attribute tag)
   component.find('input').simulate('change', {target: {value: searchWord}}); // simulates user typing 'black'
   const showCount = preload.shows.filter(show => `${show.title} ${show.description}`.toUpperCase()
-      .toIndexOf(searchWord.toUpperCase())
-  );
+      .toIndexOf(searchWord.toUpperCase()) >= 0;
+  ).length;
   expect(component.find(ShowCard).length).toEqual(showCount);
+  // can add .length to the definition of the count or to the expect statement
 });
