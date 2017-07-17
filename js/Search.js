@@ -64,7 +64,7 @@ class Search extends Component {
 
   // with onChange in input below, will be called when the search field is modified and fill in the input field so that the input from the user will be reflected on the page
   // without this function, the input field will always say 'This is a debug statement' any time a character is entered into the input field
-  handleSearchTermChange (event) {
+  handleSearchTermChange = (event) => {
     this.setState({searchTerm: event.target.value});
   }
 

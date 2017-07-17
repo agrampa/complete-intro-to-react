@@ -8,9 +8,6 @@
       "loose": true,
       "modules": false
     }]
-<<<<<<< HEAD
-  ]
-=======
   ],
   "plugins": [
     "react-hot-loader/babel",
@@ -30,5 +27,4 @@
       "plugins": ["transform-es2015-modules-commonjs"]
     }
   }
->>>>>>> 03296d511993ad5399c09b032d2088583ab13102
 }
