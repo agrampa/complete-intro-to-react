@@ -81,7 +81,12 @@ class Search extends Component {
             placeholder="Search" />
           </header>
           <div>
-          {preload.shows.map(show => <ShowCard key={show.imdbID} {...show} />)}
+            {preload.shows
+              // filter returns only the items that meet the criteria of the callback
+              // checks both title and description to be matched, can be put in either order
+              .filter(show => `${show.title} ${show.description}`.toUpperCase
+                .toIndexOf(this.state.searchTerm.toUpperCase()) >= 0)
+              .map(show => <ShowCard key={show.imdbID} {...show} />)}
           </div>
       </div>
     );
