@@ -8,7 +8,11 @@ import ShowCard from '../ShowCard';
 // Jest is Jasmine under the hood
 
 // Test functions can be used instead of 'describe' and 'it'
+// 'it' and 'test' are the same thing
+// 'describe' is optional, can wrap everything in a describe statement
 // all a matter of preference
+// 'xtest' will not run, same as 'xdescribe' or 'xit'
+
 // with renderer, no shallow
 test('Search renders correctly', () => {
   const component = renderer.create(<Search />);
@@ -32,7 +36,8 @@ test('Search renders correctly', () => {
 // static brings in Cheerio to use ajax calls in the tests
 
 test('Search should render correct amount of shows', () => {
-  
+  const component = shallow(<Search />);
+  expect(component.find(ShowCard).length).toEqual(preload.shows.length);
 });
 
 
