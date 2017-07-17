@@ -7,6 +7,8 @@ import ShowCard from '../ShowCard';
 
 // Jest is Jasmine under the hood
 
+// Istanbul is built into Jest
+
 // Test functions can be used instead of 'describe' and 'it'
 // 'it' and 'test' are the same thing
 // 'describe' is optional, can wrap everything in a describe statement
