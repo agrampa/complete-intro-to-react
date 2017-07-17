@@ -1,7 +1,9 @@
 import React from 'react';
 // import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme'; // enzyme uses renderer under the hood, so don't want/need both
+import preload from '../../preload.json';
 import Search from '../Search.js';
+import ShowCard from '../ShowCard';
 
 // Jest is Jasmine under the hood
 
@@ -28,3 +30,12 @@ test('Search renders correctly', () => {
 // Enzyme has several levels of testing: shallow, render, static
 // render emulates DOM
 // static brings in Cheerio to use ajax calls in the tests
+
+test('Search should render correct amount of shows', () => {
+  
+});
+
+
+test('Search should render correct amount of shows based on search term', () => {
+
+})
